@@ -1,8 +1,8 @@
 # SK + web3 onboard + vercel - minimal
 
-This repo can be found at [https://github.com/blocknative/web3-onboard/tree/main/examples/with-sveltekit](blocknative/web3-onboard/tree/main/examples/with-sveltekit)
+This example repo provided by blocknative can be found at [blocknative/web3-onboard/tree/main/examples/with-sveltekit](https://github.com/blocknative/web3-onboard/tree/main/examples/with-sveltekit)
 
-This repo has the fixes recommended at [https://onboard.blocknative.com/docs/modules/core#sveltekit-vite](the web3-onboard docs)
+This repo has the fixes recommended at [the web3-onboard docs](https://onboard.blocknative.com/docs/modules/core#sveltekit-vite)
 
 ```ts
   build: {
@@ -15,6 +15,7 @@ This repo has the fixes recommended at [https://onboard.blocknative.com/docs/mod
     }
   },
 ```
+
 and
 
 ```html
@@ -23,7 +24,7 @@ and
 </script>
 ```
 
-When deploying to vercel, this polyfill error is returned.
+When deploying this example repo to vercel, this polyfill error is returned.
 
 ```bash
 Cloning github.com/Elliott-Green/sk-web3-vercel-minrepo (Branch: main, Commit: d984944)
@@ -52,8 +53,8 @@ vite v4.0.5 building for production...
 transforming...
 ✓ 677 modules transformed.
 6:45:33 PM [vite-plugin-svelte] dom compile done.
-package       	files	 time	   avg
-with-sveltekit	    4	0.17s	43.4ms
+package        files  time    avg
+with-sveltekit     4 0.17s 43.4ms
 [vite]: Rollup failed to resolve import "Buffer" from "/vercel/path0/node_modules/@walletconnect/encoding/dist/esm/index.js".
 This is most likely unintended because it can break your application at runtime.
 If you do want to externalize this module explicitly add it to
@@ -76,7 +77,7 @@ Error: Command "yarn run build" exited with 1
 
 ## Reproduction
 
-git clone https://github.com/Elliott-Green/sk-web3-vercel-minrepo.git
+git clone <https://github.com/Elliott-Green/sk-web3-vercel-minrepo.git>
 npm i
 npm run build
 npm run preview
@@ -121,7 +122,6 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
 
 ## Build env configurations and troubleshooting
 
