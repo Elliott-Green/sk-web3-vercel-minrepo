@@ -4,7 +4,12 @@ import inject from '@rollup/plugin-inject'
 import type { UserConfig } from 'vite'
 import nodePolyfills from 'rollup-plugin-polyfill-node'
 
-// For further build env configs and troubleshooting 
+// yarn add --dev @esbuild-plugins/node-globals-polyfill
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
+// yarn add --dev @esbuild-plugins/node-modules-polyfill
+import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill'
+
+// For further build env configs and troubleshooting
 // checkout our official docs [here](https://onboard.blocknative.com/docs/modules/core#sveltekit-vite)
 
 const MODE = process.env.NODE_ENV
@@ -24,13 +29,17 @@ const config: UserConfig = {
     alias: {
       crypto: 'crypto-browserify',
       stream: 'stream-browserify',
-      assert: 'assert'
+      assert: 'assert',
+      buffer: 'rollup-plugin-node-polyfills/polyfills/buffer-es6'
     }
   },
   build: {
     rollupOptions: {
       external: ['@web3-onboard/*'],
-      plugins: [nodePolyfills({ include: ['crypto', 'http'] }), inject({ Buffer: ['Buffer', 'Buffer'] })]
+      plugins: [
+        nodePolyfills({ include: ['crypto', 'http'] }),
+        inject({ Buffer: ['Buffer', 'Buffer'] })
+      ]
     },
     commonjsOptions: {
       transformMixedEsModules: true
@@ -38,16 +47,20 @@ const config: UserConfig = {
   },
   optimizeDeps: {
     exclude: ['@ethersproject/hash', 'wrtc', 'http'],
-    include: [
-      '@web3-onboard/core',
-      'js-sha3',
-      '@ethersproject/bignumber'
-    ],
+    include: ['@web3-onboard/core', 'js-sha3', '@ethersproject/bignumber'],
     esbuildOptions: {
       // Node.js global to browser globalThis
       define: {
         global: 'globalThis'
       },
+      // Enable esbuild polyfill plugins
+      plugins: [
+        NodeGlobalsPolyfillPlugin({
+          process: true,
+          buffer: true
+        }),
+        NodeModulesPolyfillPlugin()
+      ]
     }
   },
   define: {
