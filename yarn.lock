@@ -1586,10 +1586,10 @@
     ethers "5.5.4"
     joi "17.9.1"
 
-"@web3-onboard/core@^2.20.4":
-  version "2.20.4"
-  resolved "https://registry.npmjs.org/@web3-onboard/core/-/core-2.20.4.tgz"
-  integrity sha512-IFI3DVq5QgFj5w1TyL61gHmeOlkX8AJiBAARO3cd4zW8I3h9K2+7HeE7LbsfwefZYLILzXCfF0gMB3qRN/GWYQ==
+"@web3-onboard/core@^2.21.3-alpha.1":
+  version "2.21.3-alpha.1"
+  resolved "https://registry.npmjs.org/@web3-onboard/core/-/core-2.21.3-alpha.1.tgz"
+  integrity sha512-Z8nJBfXCWMXAsnQFEHdQOr5WtE7rb5LOggr+R7uzo6x2rItL4X8+B329I87M7EiyCH6T32Vdow9Z4wDS5EECYw==
   dependencies:
     "@web3-onboard/common" "^2.3.3"
     bignumber.js "^9.0.0"
