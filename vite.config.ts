@@ -22,7 +22,7 @@ const config: UserConfig = {
     sveltekit(),
     development &&
       nodePolyfills({
-        include: ['node_modules/**/*.js', new RegExp('node_modules/.vite/.*js'), 'http', 'crypto']
+        include: ['node_modules/**/*.js', new RegExp('node_modules/.vite/.*js'), 'http', 'crypto', 'buffer']
       })
   ],
   resolve: {
@@ -30,7 +30,7 @@ const config: UserConfig = {
       crypto: 'crypto-browserify',
       stream: 'stream-browserify',
       assert: 'assert',
-      buffer: 'rollup-plugin-node-polyfills/polyfills/buffer-es6'
+      zlib: 'browserify-zlib',
     }
   },
   build: {
