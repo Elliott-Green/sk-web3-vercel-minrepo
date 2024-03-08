@@ -16,12 +16,16 @@
     "@types/cookie": "^0.5.1",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "assert": "^2.1.0",
+    "browserify-zlib": "^0.2.0",
+    "crypto-browserify": "^3.12.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.8.3",
     "prettier-plugin-svelte": "^2.9.0",
     "rollup-plugin-polyfill-node": "^0.12.0",
+    "stream-browserify": "^3.0.0",
     "svelte": "^3.55.1",
     "svelte-check": "^3.0.3",
     "svelte-preprocess": "^5.0.1",
@@ -36,8 +40,6 @@
     "@web3-onboard/injected-wallets": "^2.8.5",
     "@web3-onboard/walletconnect": "^2.3.6",
     "buffer": "^6.0.3",
-    "crypto-browserify": "^3.12.0",
-    "intl-messageformat": "^10.5.11",
-    "stream-browserify": "^3.0.0"
+    "intl-messageformat": "^10.5.11"
   }
 }
